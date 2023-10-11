@@ -50,12 +50,7 @@ export class AppComponent implements OnInit {
     
   }
 
-
-  onDecrement(player: IPlayer, amount: number) {
-    this.appState.decrementLife(player, amount);
-  }
-
-  onIncrement(player: IPlayer, amount: number) {
-    this.appState.incrementLife(player, amount);
+  onValueChange(player: IPlayer, amount: number) {
+    this.appState.onValueChange(player, amount);
   }
 }

@@ -2,6 +2,5 @@
     players: players$ | async
 } as state">
     <app-play-space class="w-1/2 grow" *ngFor="let player of state.players" [player]="player"
-        (onIncrementChange)="onIncrement(player, $event)"
-        (onDecrementChange)="onDecrement(player, $event)"></app-play-space>
+        (onValueChange)="onValueChange(player, $event)"></app-play-space>
 </div>

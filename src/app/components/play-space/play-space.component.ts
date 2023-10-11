@@ -10,36 +10,30 @@ export class PlaySpaceComponent {
 
   @Input() player: IPlayer | null;
 
-  @Output() onDecrementChange: EventEmitter<number>;
-  @Output() onIncrementChange: EventEmitter<number>;
-  
+  @Output() onValueChange: EventEmitter<number>;
+
   constructor() {
     this.player = null
-    this.onDecrementChange = new EventEmitter<number>();
-    this.onIncrementChange = new EventEmitter<number>();
+    this.onValueChange = new EventEmitter<number>();
   }
 
-  get life(){
+  get life() {
     return this.player?.life;
   }
-  
-  get textColour(){
+
+  get textColour() {
     return this.player?.textColour;
   }
 
-  get bgColour(){
+  get bgColour() {
     return this.player?.bgColour;
   }
 
-  get orientation(){
+  get orientation() {
     return this.player?.orientation;
   }
 
-  onIncrement(amount: number) {
-    this.onIncrementChange.emit(amount);
-  }
-
-  onDecrement(amount: number) {
-    this.onDecrementChange.emit(amount);
+  onLifeChange(amount: number) {
+    this.onValueChange.emit(amount);
   }
 }

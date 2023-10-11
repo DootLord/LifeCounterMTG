@@ -29,25 +29,13 @@ export class AppsStateService extends StateService<AppState>{
         this.setState({ players: [...players] });
     }
 
-    decrementLife(player: IPlayer, amount: number) {
+    onValueChange(player: IPlayer, amount: number) {
         let players = this.state.players;
-        
-        for (const element of players) {
-            if(element.id == player.id){
-                element.life -= amount;
-            }           
-        }
 
-        this.setPlayers(players);
-    }
-
-    incrementLife(player: IPlayer, amount: number) {
-        let players = this.state.players;
-        
         for (const element of players) {
-            if(element.id == player.id){
+            if (element.id == player.id) {
                 element.life += amount;
-            }           
+            }
         }
 
         this.setPlayers(players);
